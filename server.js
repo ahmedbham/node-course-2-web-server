@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 //const fs = require('fs')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 var app = express();
 hbs.registerPartials(__dirname + '\\views\\partials');
@@ -26,7 +26,7 @@ next();
 app.use(express.static(__dirname + '\\public'));
 
 hbs.registerHelper('getCurrentYear', () => {
-  return 'test' //return new Date().getFullYear();
+  return new Date().getFullYear();
 });
 
 hbs.registerHelper('screamIt', (text) => {
